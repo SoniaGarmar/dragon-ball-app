@@ -3,10 +3,12 @@ import { parseKiValue, filterCharactersByKiRange } from '../utils/characterUtils
 
 const API_BASE_URL = 'https://dragonball-api.com/api';
 
-export const searchCharacters = async (nameQuery, kiMin, kiMax) => {
-  const trimmedNameQuery = nameQuery ? nameQuery.trim() : '';
-  const trimmedKiMin = kiMin ? kiMin.trim() : '';
-  const trimmedKiMax = kiMax ? kiMax.trim() : '';
+const searchCharacters = async (searchParams) => {
+  const { name, minKi, maxKi } = searchParams || {};
+
+  const trimmedNameQuery = name ? name.trim() : '';
+  const trimmedKiMin = minKi ? minKi.trim() : '';
+  const trimmedKiMax = maxKi ? maxKi.trim() : '';
 
   if (!trimmedNameQuery && !trimmedKiMin && !trimmedKiMax) {
     return [];
@@ -37,3 +39,9 @@ export const searchCharacters = async (nameQuery, kiMin, kiMax) => {
     return []; 
   }
 };
+
+const api = {
+  searchCharacters,
+};
+
+export default api;
