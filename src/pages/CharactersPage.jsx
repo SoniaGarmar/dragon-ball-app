@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { searchCharacters } from '../services/api';
+import CharacterCard from '../components/CharacterCard';
 
 function CharactersPage() {
   const [characters, setCharacters] = useState([]);
@@ -148,10 +149,9 @@ function CharactersPage() {
       {isLoading && <p className="text-center">Loading...</p>}
       {error && <p className="text-center text-red-500">{error}</p>}
       {!isLoading && !error && characters.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8">
           {characters.map(character => (
-            // TODO: Add ACharacterCard component
-             character.name + "-" + character.ki + "------"
+            <CharacterCard key={character.id} character={character} />
           ))}
         </div>
       )}
