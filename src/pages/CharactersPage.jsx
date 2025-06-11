@@ -75,8 +75,8 @@ function CharactersPage() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-center mb-4">Search Characters</h1>
-      <p className="text-center text-gray-600 mb-8">Enter a name and/or ki value to search for characters.</p>
+      <h1 className="text-center mb-4 mt-8">Search Characters</h1>
+      <p className="text-center mb-8">Enter a name and/or ki value to search for characters.</p>
 
       <div className="mb-8">
         <SearchForm

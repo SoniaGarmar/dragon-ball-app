@@ -18,8 +18,8 @@ function CharacterCard({ character }) {
       />
       <h3 className="text-xl font-semibold text-orange-400 mb-2">{character.name}</h3>
      
-      <p className="text-sm text-gray-400">Ki: {character.ki}</p> 
-      <p className="text-sm text-gray-400">{character.description}</p>
+      <p className="text text-gray-400"><span className='font-semibold'>Ki</span>: {character.ki}</p> 
+      <p className="text text-gray-400">{character.description}</p>
     </div>
   );
 }

@@ -11,13 +11,13 @@ function Navbar() {
     <nav>
       <ul className="flex space-x-4">
         <li>
-          <NavLink to="/" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}>
-            Home
+          <NavLink to="/characters" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}>
+            Characters
           </NavLink>
         </li>
         <li>
-          <NavLink to="/characters" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}>
-            Characters
+          <NavLink to="/planets" style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}>
+            Planets
           </NavLink>
         </li>
       </ul>

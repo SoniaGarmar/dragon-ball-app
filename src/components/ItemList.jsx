@@ -19,7 +19,7 @@ function ItemList({
 
   if (items.length > 0) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-8 mb-8">
         {items.map(item => renderItem(item))}
       </div>
     );
