@@ -87,7 +87,7 @@ function SearchForm({
         <button
           onClick={handleSearch}
           disabled={isLoading}
-          className="w-full md:w-[200px] px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:bg-blue-300"
+          className="w-full md:w-[200px] px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:bg-blue-300"
         >
           {isLoading ? 'Searching...' : 'Search'}
         </button>

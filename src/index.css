@@ -78,11 +78,15 @@ a:hover {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 /* Responsive Utilities */
 @media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  
   h1 {
     font-size: 2rem;
   }
