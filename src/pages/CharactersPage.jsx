@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import api from '../services/api';
 import SearchForm from '../components/SearchForm';
-import CharacterList from '../components/CharacterList';
+import ItemList from '../components/ItemList';
+import CharacterCard from '../components/CharacterCard';
 
 function CharactersPage() {
   const [name, setName] = useState('');
@@ -96,11 +97,14 @@ function CharactersPage() {
         />
       </div>
 
-      <CharacterList
-        characters={characters}
+      <ItemList
+        items={characters}
         isLoading={isLoading}
         error={error}
         searchAttempted={searchAttempted}
+        renderItem={(character) => <CharacterCard key={character.id} character={character} />}
+        initialMessage="Type a name or ki value above to search for characters!"
+        noItemsFoundMessage="No characters found matching your criteria."
       />
     </div>
   );
