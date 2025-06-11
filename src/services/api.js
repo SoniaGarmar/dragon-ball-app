@@ -36,7 +36,23 @@ const searchCharacters = async (searchParams) => {
     return results;
   } catch (error) {
     console.error('Error searching characters:', error);
-    return []; 
+    let errorMessage = 'An unexpected error occurred while fetching characters.';
+
+    if (error.response) {
+      const status = error.response.status;
+      if (status === 404) {
+        errorMessage = 'The resource you requested could not be found on the server (Error 404).';
+      } else if (status >= 500) {
+        errorMessage = `The server encountered an internal error (Error ${status}). Please try again later.`;
+      } else {
+        errorMessage = `There was a problem with the request (Error ${status}).`;
+      }
+    } else if (error.request) {
+      errorMessage = 'Network Error: No response received from the server. Please check your connection.';
+    } else {
+      errorMessage = `Error: ${error.message}`;
+    }
+    throw new Error(errorMessage); 
   }
 };
 
